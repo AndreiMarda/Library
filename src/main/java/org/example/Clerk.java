@@ -1,18 +1,16 @@
 package org.example;
 
 public class Clerk extends Person implements Employee{
-    private int id;
     private long phoneNumber, salary;
 
     public Clerk (int id, String name, int age, String address, long phoneNumber, long salary) {
-        super(age, name, address);
-        this.id = id;
+        super(id, age, name, address);
         this.phoneNumber = phoneNumber;
         this.salary = salary;
     }
 
-    public Clerk(int age, String name, String address) {
-        super(age, name, address);
+    public Clerk(int id, int age, String name, String address) {
+        super(id, age, name, address);
     }
 
     @Override
@@ -25,10 +23,12 @@ public class Clerk extends Person implements Employee{
         }
         Clerk other = (Clerk) obj;
 
-        return this.id == other.id;
+        return this.getId() == other.getId();
     }
-    public int getId() {
-        return id;
+    @Override
+    public String toString () {
+        String clerk = new String("New clerk, called " + this.getName() + " works here.");
+        return clerk;
     }
 
     public long getPhoneNumber() {
@@ -37,10 +37,6 @@ public class Clerk extends Person implements Employee{
 
     public long getSalary() {
         return salary;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setPhoneNumber(long phoneNumber) {

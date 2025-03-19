@@ -2,9 +2,10 @@ package org.example;
 
 public class Person {
     private String name, address;
-    private int age;
+    private int age, id;
 
-    public Person(int age, String name, String address) {
+    public Person(int id, int age, String name, String address) {
+        this.id = id;
         this.age = age;
         this.name = name;
         this.address = address;
@@ -33,5 +34,13 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

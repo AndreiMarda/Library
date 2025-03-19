@@ -37,6 +37,8 @@ public class LibraryManagement {
                     salary = longValue(bufferedReader, 1); // order == 1 for salary
 
                     Clerk clerk = new Clerk(id, name, age, address, phoneNumber, salary);
+
+                    System.out.println(clerk.toString());
                     break;
                 case 2: // Librarian
                     id = intValue(bufferedReader, 0); // order == 0 for id
@@ -45,16 +47,22 @@ public class LibraryManagement {
                     address = stringValue(bufferedReader, 1); // order == 1 for address
                     phoneNumber = longValue(bufferedReader, 0); // order == 0 for phone
                     salary = longValue(bufferedReader, 1); // order == 1 for salary
+                    char area = readElement(bufferedReader).charAt(0);
 
-                    Librarian librarian = new Librarian();
+                    Librarian librarian = new Librarian(id, age, name, address, phoneNumber, salary, area);
+
+                    System.out.println("Librarian with name " + librarian.getName() + " created successfully.");
                     break;
-                case 3: // View Issued Books History
+                case 3: // Add Book
 
                     break;
-                case 4: // View All Books in Library
+                case 4: // View Issued Books History
 
                     break;
-                case 5: // Close
+                case 5: // View All Books in Library
+
+                    break;
+                case 6: // Close
                     break;
             }
         } catch (Exception e) {
@@ -117,6 +125,18 @@ public class LibraryManagement {
             value = parseLong(temp.toString());
         }
         return (int)value;
+    }
+
+    public char charValue(BufferedReader bufferedReader) {
+        String ch = "";
+        System.out.print("Enter area (char): ");
+        try {
+            ch = bufferedReader.readLine();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        char c = ch.charAt(0);
+        return c;
     }
 
     public String readElement(BufferedReader bufferedReader) {
