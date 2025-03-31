@@ -18,7 +18,7 @@ public class Clerk extends Person implements Employee{
         if (this == obj) {
             return true;
         }
-        if ((obj == null) || (! (obj instanceof Clerk))) {
+        if ((! (obj instanceof Clerk))) {
             return false;
         }
         Clerk other = (Clerk) obj;
@@ -27,8 +27,14 @@ public class Clerk extends Person implements Employee{
     }
     @Override
     public String toString () {
-        String clerk = new String("New clerk, called " + this.getName() + " works here.");
+        String clerk = new String("Clerk " + this.getId() + ", " + this.getName() + ", " +
+                this.getAge() + ", " + this.getAddress() + ", " + this.phoneNumber + ", " + this.salary);
         return clerk;
+    }
+
+    public void work () {
+        System.out.println("The employee " + this.getId() + ", whose name is: " + this.getName() +
+                "works as a clark in this library.");
     }
 
     public long getPhoneNumber() {
@@ -47,8 +53,5 @@ public class Clerk extends Person implements Employee{
         this.salary = salary;
     }
 
-    public void work () {
-        System.out.println("The employee " + this.getId() + ", whose name is: " + this.getName() +
-                "works as a clark in this library.");
-    }
+
 }

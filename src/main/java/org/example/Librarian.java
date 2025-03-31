@@ -20,7 +20,7 @@ public class Librarian extends Person implements Employee{
         if (this == obj) {
             return true;
         }
-        if ((this == null) || !(obj instanceof Librarian)) {
+        if (!(obj instanceof Librarian)) {
             return false;
         }
         Librarian other = (Librarian) obj;
@@ -29,8 +29,13 @@ public class Librarian extends Person implements Employee{
 
     @Override
     public String toString () {
-        String librarian = new String("New librarian, called " + this.getName() + " works here.");
+        String librarian = "New librarian, called " + this.getName() + " works here.";
         return librarian;
+    }
+
+    public void work () {
+        System.out.println("The employee " + this.getId() + ", whose name is: " + this.getName() +
+                "works as a librarian in this library.");
     }
 
     public char getArea() {

@@ -1,6 +1,6 @@
 package org.example;
 
-public class Person {
+public class Person implements Employee{
     private String name, address;
     private int age, id;
 
@@ -10,7 +10,9 @@ public class Person {
         this.name = name;
         this.address = address;
     }
-    public void work() {}
+    public void work() {
+        System.out.println("This is a normal employee, having the id number " + this.id);
+    }
 
     public String getName() {
         return name;
