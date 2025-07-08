@@ -2,10 +2,11 @@ package org.example;
 
 public class Book {
     private String title, author, genre, language;
-    private int publicationYear, pageCount, weight, price;
+    private int id, publicationYear, pageCount, weight, price;
 
-    public Book(String title, String author, String genre, String language,
+    public Book(int id, String title, String author, String genre, String language,
                 int publicationYear, int pageCount, int weight, int price) {
+        this.id = id;
         this.title = title;
         this.author = author;
         this.genre = genre;
@@ -33,6 +34,14 @@ public class Book {
         String book = new String(this.title + ", wrote by " + this.author + ", year of publication - "
                 + this.publicationYear + " has " + this.pageCount + " pages.");
         return book;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setid(int id){
+        this.id = id;
     }
 
     public String getTitle() {

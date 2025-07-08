@@ -4,8 +4,8 @@ public class Librarian extends Person implements Employee{
     private char area;
     private long salary, phoneNumber;
 
-    public Librarian(int id, int age, String name, String address, long phoneNumber, long salary, char area) {
-        super(id, age, name, address);
+    public Librarian(int employeeId, int age, String name, String address, long phoneNumber, long salary, char area) {
+        super(employeeId, age, name, address);
         this.area = area;
         this.salary = salary;
         this.phoneNumber = phoneNumber;
@@ -24,7 +24,7 @@ public class Librarian extends Person implements Employee{
             return false;
         }
         Librarian other = (Librarian) obj;
-        return other.getId() == this.getId();
+        return other.getEmployeeId() == this.getEmployeeId();
     }
 
     @Override
@@ -34,7 +34,7 @@ public class Librarian extends Person implements Employee{
     }
 
     public void work () {
-        System.out.println("The employee " + this.getId() + ", whose name is: " + this.getName() +
+        System.out.println("The employee " + this.getEmployeeId() + ", whose name is: " + this.getName() +
                 "works as a librarian in this library.");
     }
 

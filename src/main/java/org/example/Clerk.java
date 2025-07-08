@@ -3,14 +3,14 @@ package org.example;
 public class Clerk extends Person implements Employee{
     private long phoneNumber, salary;
 
-    public Clerk (int id, String name, int age, String address, long phoneNumber, long salary) {
-        super(id, age, name, address);
+    public Clerk (int employeeId, String name, int age, String address, long phoneNumber, long salary) {
+        super(employeeId, age, name, address);
         this.phoneNumber = phoneNumber;
         this.salary = salary;
     }
 
-    public Clerk(int id, int age, String name, String address) {
-        super(id, age, name, address);
+    public Clerk(int employeeId, int age, String name, String address) {
+        super(employeeId, age, name, address);
     }
 
     @Override
@@ -23,17 +23,17 @@ public class Clerk extends Person implements Employee{
         }
         Clerk other = (Clerk) obj;
 
-        return this.getId() == other.getId();
+        return this.getEmployeeId() == other.getEmployeeId();
     }
     @Override
     public String toString () {
-        String clerk = new String("Clerk " + this.getId() + ", " + this.getName() + ", " +
+        String clerk = new String("Clerk " + this.getEmployeeId() + ", " + this.getName() + ", " +
                 this.getAge() + ", " + this.getAddress() + ", " + this.phoneNumber + ", " + this.salary);
         return clerk;
     }
 
     public void work () {
-        System.out.println("The employee " + this.getId() + ", whose name is: " + this.getName() +
+        System.out.println("The employee " + this.getEmployeeId() + ", whose name is: " + this.getName() +
                 "works as a clark in this library.");
     }
 

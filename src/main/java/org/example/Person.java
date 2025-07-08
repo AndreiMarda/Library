@@ -2,16 +2,16 @@ package org.example;
 
 public class Person implements Employee{
     private String name, address;
-    private int age, id;
+    private int age, employeeId;
 
-    public Person(int id, int age, String name, String address) {
-        this.id = id;
+    public Person(int employeeId, int age, String name, String address) {
+        this.employeeId = employeeId;
         this.age = age;
         this.name = name;
         this.address = address;
     }
     public void work() {
-        System.out.println("This is a normal employee, having the id number " + this.id);
+        System.out.println("This is a normal employee, having the id number " + this.employeeId);
     }
 
     public String getName() {
@@ -38,11 +38,11 @@ public class Person implements Employee{
         this.age = age;
     }
 
-    public int getId() {
-        return id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 }
